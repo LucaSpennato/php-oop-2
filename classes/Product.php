@@ -5,15 +5,15 @@ class Product{
     protected $price;
     protected $serialCode;
     protected $desription;
+
     
-    
-    function __construct($_name, $_price, $_serialCode, $_description)
+    public function __construct($_name, $_price, $_serialCode, $_description)
     {
-        $this->name = $_name;
-        $this->price = $_price;
-        $this->serialCode = $_serialCode;
-        $this->description = $_description;
-    }
+        $this->setName($_name);
+        $this->setPrice($_price);
+        $this->setSerialCode($_serialCode);
+        $this->setDescription($_description);
+    } 
 
     // getter
     public function getName(){
