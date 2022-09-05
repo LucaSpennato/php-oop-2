@@ -1,5 +1,8 @@
 <?php
-class Food{
+
+require_once __DIR__ . '/Product.php';
+
+class Food extends Product{
     protected $packaging;
     protected $isWet;
     protected $wichAnimal;
@@ -8,15 +11,16 @@ class Food{
     protected $expirationDate;
     protected $weight;
 
-    public function __construct($_packaging, $_isWet, $_wichAnimal, $_nutritionValue, $_isAdult, $_expirationDate, $_weight)
+    public function __construct($_name, $_price, $_serialCode, $_description, $_packaging, $_isWet, $_wichAnimal, $_nutritionValue, $_isAdult, $_expirationDate, $_weight)
     {
-       $this->setPackaging($_packaging);
-       $this->setIsWet($_isWet);
-       $this->setWichAnimal($_wichAnimal);
-       $this->setNutritionValue($_nutritionValue);
-       $this->setIsAdult($_isAdult);
-       $this->setExpirationDate($_expirationDate);
-       $this->setWeight($_weight);
+        parent::__construct($_name, $_price, $_serialCode, $_description);
+        $this->setPackaging($_packaging);
+        $this->setIsWet($_isWet);
+        $this->setWichAnimal($_wichAnimal);
+        $this->setNutritionValue($_nutritionValue);
+        $this->setIsAdult($_isAdult);
+        $this->setExpirationDate($_expirationDate);
+        $this->setWeight($_weight);
     }
 
     // getter

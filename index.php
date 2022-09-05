@@ -1,4 +1,12 @@
 <?php 
+
+    require_once __DIR__ . '/classes/Product.php';
+    require_once __DIR__ . '/classes/Food.php';
+    require_once __DIR__ . '/classes/Utilities.php';
+    require_once __DIR__ . '/classes/User.php';
+    require_once __DIR__ . '/classes/Registered.php';
+    require_once __DIR__ . '/classes/Guest.php';
+
     // Oggi pomeriggio provate ad immaginare quali sono le classi necessarie per creare uno 
     // shop online con le seguenti caratteristiche:
     // L'e-commerce vende prodotti per gli animali.
@@ -40,8 +48,14 @@
      * }
      * 
      */
-    require_once __DIR__ . '/classes/Product.php';
-    $prodotto = new Product("ciao", 33.40, 1455567899, "ciao");
+    // $products = [];
+    // $products[] = new Product("ciao", 33.40, 1455667899, "ciao");
+    // $products[] = new Product("pappanza", 33.42, 1212121212, "ehila");
+
+    $foods = [];
+    $foods[] = new Food("pappa", 33.44, 1234567899, "cibazzo", "latta", false, "dog", "bono", true, "22/10/2200", "400g");
+    $foods[] = new Food("pappanza", 22.30,  1234567890, "pappabella", "busta", true, "cat", "bonissimo", true, "23/01/3404", "300g");
+
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +67,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php var_dump($prodotto); ?>
+
+    <?php foreach ($foods as $food) {  ?>
+        <div>  
+           <?php echo 'Name: ' . $food->getName() . '  '; ?>
+        </div>
+    <?php } ?>
 </body>
 </html>
