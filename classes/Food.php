@@ -69,8 +69,8 @@ class Food extends Product{
         $this->nutritionValue = $_nutritionValue;
     }
 
-    private function setIsAdult($_packaging){
-        $this->packaging = $_packaging;
+    private function setIsAdult($_isAdult){
+        $this->isAdult = $_isAdult;
     }
 
     private function setExpirationDate($_expirationDate){

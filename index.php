@@ -48,18 +48,14 @@
      * }
      * 
      */
-    // $products = [];
-    // $products[] = new Product("ciao", 33.40, 1455667899, "ciao");
-    // $products[] = new Product("pappanza", 33.42, 1212121212, "ehila");
 
-    $foods = [];
-    $foods[] = new Food("pappa", 33.44, 1234567899, "cibazzo", "latta", false, "dog", "bono", true, "22/10/2200", "400g");
-    $foods[] = new Food("pappanza", 22.30,  1234567890, "pappabella", "busta", true, "cat", "bonissimo", true, "23/01/3404", "300g");
+    $cart = [];
+    $cart[] = new Food("pappa", 33.44, 1234567899, "cibazzo", "latta", false, "dog", "bono", true, "22/10/2200", "400g");
+    $cart[] = new Food("pappanza", 22.30, 1243567890, "pappabella", "busta", true, "cat", "bonissimo", true, "23/01/3404", "300g");
+    $cart[] = new Utilities("cuccia", 50, 1324567893, "cuccia in stoffa per cani e gatti", "2 x 3");
 
-    $user = new User("peppe", "papagna", $foods);
-    // var_dump($foods);
-    // var_dump($user);
-    var_dump($user->getCart());
+    $user = new User("peppe", "papagna", "05/2010", $cart);
+    var_dump($user);
 
 ?>
 
@@ -73,9 +69,9 @@
 </head>
 <body>
 
-    <?php foreach ($foods as $food) {  ?>
+    <?php foreach ($cart as $item) {  ?>
         <div>  
-           <?php echo 'Name: ' . $food->getName() . '  '; ?>
+           <?php echo 'Name: ' . $item->getName() . '  '; ?>
         </div>
     <?php } ?>
 </body>
