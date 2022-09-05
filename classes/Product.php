@@ -6,7 +6,6 @@ class Product{
     protected $serialCode;
     protected $desription;
 
-    
     public function __construct($_name, $_price, $_serialCode, $_description)
     {
         $this->setName($_name);
@@ -42,7 +41,15 @@ class Product{
     }
     
     private function setSerialCode($_serialCode){
-        $this->serialCode = $_serialCode;
+        try{
+            if(strlen($_serialCode) === 10 && is_int($_serialCode)){
+                $this->serialCode = $_serialCode;
+            }else {
+                throw new LengthException('SetSerialCode accepts only 10 number');
+            }
+        }catch(Exception $e){
+            echo 'Invalid serial code' . $e->getMessage();
+        }
     }
 
     private function setDescription($_description){

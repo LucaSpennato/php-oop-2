@@ -40,6 +40,8 @@
      * }
      * 
      */
+    require_once __DIR__ . '/classes/Product.php';
+    $prodotto = new Product("ciao", 33.40, 1455567899, "ciao");
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +53,6 @@
     <title>Document</title>
 </head>
 <body>
-
+    <?php var_dump($prodotto); ?>
 </body>
 </html>
