@@ -6,8 +6,9 @@ class Food{
     protected $nutritionValue;
     protected $isAdult;
     protected $expirationDate;
+    protected $weight;
 
-    public function __construct($_packaging, $_isWet, $_wichAnimal, $_nutritionValue, $_isAdult, $_expirationDate)
+    public function __construct($_packaging, $_isWet, $_wichAnimal, $_nutritionValue, $_isAdult, $_expirationDate, $_weight)
     {
        $this->setPackaging($_packaging);
        $this->setIsWet($_isWet);
@@ -15,6 +16,7 @@ class Food{
        $this->setNutritionValue($_nutritionValue);
        $this->setIsAdult($_isAdult);
        $this->setExpirationDate($_expirationDate);
+       $this->setWeight($_weight);
     }
 
     // getter
@@ -42,6 +44,10 @@ class Food{
         return $this->expirationDate;
     }
 
+    public function getWeight(){
+        return $this->weight;
+    }
+
     // setter
     private function setPackaging($_packaging){
         $this->packaging = $_packaging;
@@ -65,5 +71,9 @@ class Food{
 
     private function setExpirationDate($_expirationDate){
         $this->expirationDate = $_expirationDate;
+    }
+
+    private function setWeight($_weight){
+        $this->weight = $_weight;
     }
 }
