@@ -56,6 +56,11 @@
     $foods[] = new Food("pappa", 33.44, 1234567899, "cibazzo", "latta", false, "dog", "bono", true, "22/10/2200", "400g");
     $foods[] = new Food("pappanza", 22.30,  1234567890, "pappabella", "busta", true, "cat", "bonissimo", true, "23/01/3404", "300g");
 
+    $user = new User("peppe", "papagna", $foods);
+    // var_dump($foods);
+    // var_dump($user);
+    var_dump($user->getCart());
+
 ?>
 
 <!DOCTYPE html>

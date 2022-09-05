@@ -2,12 +2,13 @@
 class User{
     protected $userName;
     protected $lastName;
-    protected $buyingProducts = [];
+    protected $cart = [];
 
-    function __construct($_userName, $_lastName)
+    function __construct($_userName, $_lastName, $_cart)
     {
         $this->setUserName($_userName);
         $this->setLastName($_lastName);
+        $this->addToCart($_cart);
     }
 
     // getter 
@@ -19,6 +20,10 @@ class User{
         return $this->lastName;
     }
 
+    public function getCart(){
+        return $this->cart;
+    }
+
     // setter 
     private function setUserName($_userName){
         $this->userName = $_userName;
@@ -27,4 +32,9 @@ class User{
     private function setLastName($_lastName){
         $this->lastName = $_lastName;
     }
+
+    private function addToCart($_cart){
+        $this->cart = $_cart;
+    }
+
 }
