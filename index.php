@@ -9,6 +9,37 @@
     // BONUS:
     // Alcuni prodotti (es. antipulci) avranno la caratteristica che
     // saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
+
+    /**
+     * User{
+     *  utente iscritto | non iscritto
+     * }
+     * 
+     * Class Product{
+     *  $name;
+     *  $desription;
+     *  $price;
+     *  $serialCode;
+     *  $typeOfProduct; ->
+     *  Class Food{
+     *      $packaging;
+     *      $dryOrWet;
+     *      $wichAnimal;
+     *      $nutritionValue;
+     *      $puppyOrAdults;
+     *      $expirationDate;
+     *    }
+     * Class Toys{
+     *       $size;
+     *       $material;
+     *     }
+     * Class Utilities{
+     *      $size;
+     *      $porpouse;
+     *     }
+     * }
+     * 
+     */
 ?>
 
 <!DOCTYPE html>
