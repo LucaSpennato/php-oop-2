@@ -1,6 +1,7 @@
 <?php
 
 class Product{
+    private $id;
     protected $name;
     protected $price;
     protected $serialCode;
@@ -8,6 +9,7 @@ class Product{
 
     public function __construct($_name, $_price, $_serialCode, $_description)
     {
+        $this->id = substr($_name, 2) . rand(11111,99999) . substr($_serialCode, 2);
         $this->setName($_name);
         $this->setPrice($_price);
         $this->setSerialCode($_serialCode);

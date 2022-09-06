@@ -1,62 +1,10 @@
 <?php 
 
-    require_once __DIR__ . '/classes/Product.php';
-    require_once __DIR__ . '/classes/Food.php';
-    require_once __DIR__ . '/classes/Utilities.php';
-    require_once __DIR__ . '/classes/User.php';
-    require_once __DIR__ . '/classes/Registered.php';
-    require_once __DIR__ . '/classes/Guest.php';
-
-    // Oggi pomeriggio provate ad immaginare quali sono le classi necessarie per creare uno 
-    // shop online con le seguenti caratteristiche:
-    // L'e-commerce vende prodotti per gli animali.
-    //  I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
-    // L'utente potrà sia comprare i prodotti senza registrarsi,
-    //  oppure iscriversi e ricevere il 20% di sconto su tutti i prodotti.
-    // Il pagamento avviene con la carta di credito, che non deve essere scaduta.
-    // BONUS:
-    // Alcuni prodotti (es. antipulci) avranno la caratteristica che
-    // saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
-
-    /**
-     * User{
-     *  utente iscritto | non iscritto
-     * }
-     * 
-     * Class Product{
-     *  $name;
-     *  $desription;
-     *  $price;
-     *  $serialCode;
-     *  $typeOfProduct; ->
-     *  Class Food{
-     *      $packaging;
-     *      $dryOrWet;
-     *      $wichAnimal;
-     *      $nutritionValue;
-     *      $puppyOrAdults;
-     *      $expirationDate;
-     *    }
-     * Class Toys{
-     *       $size;
-     *       $material;
-     *     }
-     * Class Utilities{
-     *      $size;
-     *      $porpouse;
-     *     }
-     * }
-     * 
-     */
-
-    $cart = [];
-    $cart[] = new Food("pappa", 33.44, 1234567899, "cibazzo", "latta", false, "dog", "bono", true, "22/10/2200", "400g");
-    $cart[] = new Food("pappanza", 22.30, 1243567890, "pappabella", "busta", true, "cat", "bonissimo", true, "23/01/3404", "300g");
-    $cart[] = new Utilities("cuccia", 50, 1324567893, "cuccia in stoffa per cani e gatti", "2 x 3");
-
-    $user = new User("peppe", "papagna", "05/2010", $cart);
-    var_dump($user);
-
+    require_once __DIR__ . '/classes/product/Product.php';
+    require_once __DIR__ . '/classes/product/Food.php';
+    require_once __DIR__ . '/classes/product/Utilities.php';
+    require_once __DIR__ . '/classes/user/Registered.php';
+    require_once __DIR__ . '/classes/user/User.php';
 ?>
 
 <!DOCTYPE html>
@@ -69,10 +17,14 @@
 </head>
 <body>
 
-    <?php foreach ($cart as $item) {  ?>
-        <div>  
-           <?php echo 'Name: ' . $item->getName() . '  '; ?>
-        </div>
-    <?php } ?>
+    <h3>
+        <?php
+            $user = new Registered("ciccio", "pasticcio");
+            $user->addToCart(new Food("cibbo", 33.44, 2313132425, "pappabella", "can", true, "dog", "bono", true, "20/04/2500", "400g"));
+            $user->addToCart(new Utilities("pillolazze", 50.33, 1415151515, "pillazze per cose", "3x2"));
+            var_dump($user);
+        ?>
+    </h3>
+
 </body>
 </html>
