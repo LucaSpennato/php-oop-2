@@ -23,6 +23,7 @@
             $user->addToCart(new Food("cibbo", 33.44, 2313132425, "pappabella", "can", true, "dog", "bono", true, "20/04/2500", "400g"));
             $user->addToCart(new Utilities("pillolazze", 50.33, 1415151515, "pillazze per cose", "3x2"));
             var_dump($user);
+            echo $user->getDiscounted();
         ?>
     </h3>
 

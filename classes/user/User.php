@@ -2,6 +2,10 @@
 class User{
     protected $cart = [];
 
+    public function getCart(){
+        return $this->cart; 
+    }
+
     public function addToCart(...$products){
 
         foreach ($products as $product) {
@@ -18,13 +22,13 @@ class User{
     }
     
     public function getCartTotal(){
-        
+        $total = 0;
+        foreach ($this->cart as $cartElement) {
+            $total += $cartElement->getPrice();
+        }
+        return $total;
     }
     
-    public function getCart(){
-       return $this->cart; 
-    }
-
     // getter 
     public function getUserName(){
         return $this->userName;
